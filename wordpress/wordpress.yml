@@ -1,0 +1,9 @@
+docker_compose:
+  overrides:
+    app:
+      image: wordpress
+      environment:
+        WORDPRESS_DB_HOST: database
+        WORDPRESS_DB_USER: drupal
+        WORDPRESS_DB_NAME: drupal
+        WORDPRESS_DB_PASSWORD: drupal
