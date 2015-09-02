@@ -1,0 +1,9 @@
+# Specific settings for docker compose go here
+docker_compose:
+  app_services:
+    solr:
+      image: lopezs/drupal-solr
+      hostname: solr
+      ports:
+        - "8983:8983"
+      command: -Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar
