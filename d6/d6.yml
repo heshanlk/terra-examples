@@ -1,13 +1,7 @@
 hooks:
     build: |
       cp sites/default/default.settings.php sites/default/settings.php
-      echo "\$databases['default']['default'] = array(
-        'driver' => 'mysql',
-        'database' => 'drupal',
-        'username' => 'drupal',
-        'password' => 'drupal',
-        'host' => 'database',
-      );" >> sites/default/settings.php
+      echo "\$db_url = 'mysql://drupal:drupal@database/drupal';" >> sites/default/settings.php
       mkdir sites/default/files
       chmod 777 sites/default/files
     enable_first: |
@@ -15,8 +9,6 @@ hooks:
       drush {{alias}} uli
     test: |
       cd tests
-      composer install
-      bin/behat --colors
 docker_compose:
   overrides:
     app:
