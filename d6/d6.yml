@@ -12,4 +12,4 @@ hooks:
 docker_compose:
   overrides:
     app:
-      image: pataquets/apache-drupal
+      image: heshanlk/docker-apache-drupal6
