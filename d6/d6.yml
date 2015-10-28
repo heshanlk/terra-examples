@@ -13,3 +13,5 @@ docker_compose:
   overrides:
     app:
       image: heshanlk/docker-apache-drupal6
+    drush:
+      image: heshanlk/terra-d6
